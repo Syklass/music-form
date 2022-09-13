@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css?2">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="calendar\app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Создать запрос - НАЗВАНИЕ</title>
+</head>
+
+<body>
+    <!--шапка-->
+    <header>
+        <div class="header-content">
+            <div class="container">
+                <a href="" alt="тут было лого" class="header-logo">
+                </a>
+            </div>
+            <div class="header-border"></div>
+        </div>
+    </header>
+    <!--main + привет артисту :)-->
+    <main>
+        <div class="container">
+            <div class="main-hello-block">
+                <h1 class="main-hello">Уважаемый артист!</h1>
+                <h1 class="main-hello " id="dearArtist">Для загрузки Вашего трека потребуются следующие данные: 
+                </h1>
+            </div>
+            <!--Селект-->
+            
+            <form action="" method="post" id="form-for-drop" class="form-art">
+                <div class="header-content-bo">
+                    <div class="select-q">
+                        <span class="select-what kihmish">что вы выгружаете?
+                            <img src="svg\red-dot.svg" alt="*" class="req-icon kihmish2">
+                        </span>
+                        
+                        <div class="select _req" name="UploadType" id="Upload-Type" data-value="">
+                            <div onClick="ArrowSwap()" class="select-header" id="UploadType-error-display">
+                                <span class="select-current">Выбрать тип</span>
+                                <img src="svg\input-contorls\Prev.svg" alt="" class="select-arrow" id="arrow-swap-id">
+                            </div>
+                            <div class="select-body">
+                                <div class="select-item" data-value=0>Полноценный релиз</div>
+                                <div class="select-item" data-value=1>Отрезок в TikTok</div>
+                                <div class="select-item" data-value=2>Альбом</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-number-block">
+                        <div class="input-content">
+                            <div class="input-checkbox">
+                                <input type="checkbox" id="ExplicitContent1" name="ExplicitContent" data-val="true"
+                                    value="" class="reset_class custom-checkbox hidehim kilo" data-key="mat"/>
+                                <label for="ExplicitContent1" class="checkbox-label hidehim">Есть ли мат?</label>
+                            </div>
+                            <div class="boje-help-me">
+                                <div class="track-seconds-div">
+                                    <div class="inner-container">
+                                        <input min="0" inputmode="numeric" pattern="[0-9]*" id="track-second-min" type="number" onClick="this.select(0, this.value.length)" data-val="true" value="0" data-min="0"
+                                        name="PreviewStartMin" class="reset_class track-seconds _req sexc kilo" data-key="mins">
+                                    <p class="seconds-space">:</p>
+                                    <input min="0" inputmode="numeric" pattern="[0-9]*" id="track-second-value" type="number" onClick="this.select(0, this.value.length)" data-val="true" value="0" data-min="0"
+                                    name="PreviewStart" class="reset_class track-seconds _req sexc kilo" data-key="seconds">
+                                    <label for="track-seconds" class="track-sec-label"></label>
+                                    </div>
+                                    <span class="control-spans">
+                                        
+                                        <span id="next">
+                                            <img src="svg\input-contorls\Next.svg" alt="" class="number-control">
+                                        </span>
+    
+    
+                                        <span id="prev">
+                                            <img src="svg\input-contorls\Prev.svg" alt="" class="number-control">
+                                        </span>
+    
+                                    </span>
+            
+                                </div>
+                                <div class="text-about-seconds">
+                                    <h1 class="part1">Укажите желаемое время
+                                        начала предпрослушивания Вашей песни в Apple
+                                        Music и TikTok.
+                                    </h1>
+                                    <h2 class="part2">
+                                        Укажите,
+                                        когда следует воспроизводить трек. Обычно
+                                        артисты выбирают время начала припева.
+                                    </h2>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                    </div>
+
+                    
+
+                </div>
+
+                
+                
+                <div class="form-main">
+                    
+                    <div class="album_content _album_forms _album_true _album_delete" id="AlbumParent">
+                        <div class="head-of-block-text">
+                            <h1 class="main-form2-block-header">
+                                добавить трек
+                            </h1>
+                            <span class="add-new-track" onclick="AlbumTrackAdd()">
+                                <img src="svg\add-person.svg" class="add-new-person-img">
+                            </span>
+                        </div>
+                        
+
+                    </div>
+
+
+                    <div class="form_main_inner">
+
+                        <div class="main-form1">
+
+                            <div class="standart-form _album_forms _album_delete _album_true _album_class_helper" id="">
+                                <div class="formname-req">
+                                    <h1 class="formname">название альбома</h1>
+                                    <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                </div>
+                                <div data-val-required="" data-error="" class="standart-input">
+                                    <input name="AlbumName"  type="text" class="reset_class input-req _req " id="AlbumName-value" placeholder="">
+                                </div>
+                            </div>
+    
+                            <div class="standart-form">
+                                <div class="formname-req">
+                                    <h1 class="formname">никнейм</h1>
+                                    <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                </div>
+                                <div data-val-required="The Никнейм field is required." data-error=""
+                                    class="standart-input">
+                                    <input name="NickName" value="" type="text" class="reset_class input-req _req kilo" data-key="nick" id="nickname-value" placeholder="">
+                                </div>
+                            </div>
+    
+                            
+    
+                            <div class="standart-form">
+                                <div class="formname-req">
+                                    <h1 class="formname">название трека</h1>
+                                    <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                </div>
+                                <div data-val-required="" data-error="" class="standart-input ">
+                                    <input name="TrackName" type="text" 
+                                    class="reset_class input-req _req album_track_fields" 
+                                    data-key="albumTrackName" id="TrackName-value" placeholder="">
+                                </div>
+                            </div>
+    
+    
+                            <div class="standart-form">
+                                <div class="formname-req">
+                                    <h1 class="formname">ваш e-mail</h1>
+                                    <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                </div>
+                                <div data-val-required="" data-error="" class="standart-input">
+                                    <input name="Email" type="text" class="reset_class input-req _req _email kilo" data-key="email" id="email-display-error" placeholder="">
+                                </div>
+                            </div>
+    
+                            <div class="standart-form">
+                                <div class="formname-req">
+                                    <h1 class="formname">загрузите ваш трек</h1>
+                                    <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                </div>
+                                <div class="standart-input ">
+                                    <div class="fake-input input-fake" id="zzz">
+                                        <div class="input__wrapper input__wrapper-haha" >
+                                            <span class="display-track-name-h1 kilo" data-key="albumDisplayTrackName" id="display-track-name">Загрузите .wav</span>
+                                            <span class="file-audio-name"></span>
+                                            <input name="TrackFile" type="file" value="" id="input__file-audio"
+                                                accept=".wav" onchange="validateAudio()" class="input input__file _orreq album_track_fields" data-key="Track"
+                                                >
+                                            <label for="input__file-audio"
+                                                class="input__file-button input__file-button-haha">
+                                                <span class="input__file-button-text">выбрать файл</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="standart-form need-form-heigh2">
+                                <div class="formname-req">
+                                    <h1 class="formname">ссылка на ваш трек </h1>
+                                    <div class="popup" onclick="popupq()" id="popup-div1"><img src="svg\tip.svg" alt=""
+                                            class="tip-sym-img">
+                                        <span class="popuptext" id="myPopup">
+                                            При наличии можете
+                                            заполнить эту позицию
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="standart-input track-link">
+                                    <div class="text-area-size-juicy">
+                                        <textarea type="text" id="TrackLink-area" data-key="albumTrackLink" class="reset_class area-for-song-text-juicy album_track_fields" name="TrackLink"
+                                            placeholder="Ссылка на файлообменник для загрузки трека в формате .wav"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+                            <div class="standart-form _instumental _del_instrumental">
+                                <div class="formname-req">
+                                    <h1 class="formname">загрузка инструментала</h1>
+                                    <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                </div>
+                                <div class="standart-input ">
+                                    <div class="fake-input input-fake" id="zzz1">
+                                        <div class="input__wrapper input__wrapper-haha" id="instumental_file" >
+                                            <span class="display-track-name-h1" id="display-track-name-second">Загрузите .wav</span>
+                                            <span class="file-audio-name"></span>
+                                            <input name="TrackFile" type="file" value="" id="input__file-audio-second"
+                                                accept=".wav" onchange="validateAudioSecond()" data-key="Inst" class="album_track_fields input input__file _orreq ">
+                                            <label for="input__file-audio-second"
+                                                class="input__file-button input__file-button-haha">
+                                                <span class="input__file-button-text">выбрать файл</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="standart-form need-form-heigh2 _instumental _del_instrumental">
+                                <div class="formname-req">
+                                    <h1 class="formname">ссылка на ваш инструментал</h1>
+                                    <div class="popup" onclick="popups()" id="popup-div5"><img src="svg\tip.svg" alt=""
+                                            class="tip-sym-img">
+                                        <span class="popuptext" id="myPopupеl">
+                                            При наличии можете
+                                            заполнить эту позицию
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="standart-input track-link">
+                                    <div class="text-area-size-juicy">
+                                        <textarea type="text" id="InstrumentalLink-area" class="reset_class area-for-song-text-juicy album_track_fields" data-key="albumInstumentalLink" name="InstumentalLinkValue"
+                                            placeholder="Ссылка на файлообменник для загрузки инструментала в формате .wav"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+                            <!--загрузка обложки-->
+    
+    
+                            <div class="standart-form">
+                                <div class="formname-req">
+                                    <h1 class="formname">обложка</h1>
+                                    <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                </div>
+    
+                                <div class="cover-load-border" id="cover-error-display">
+                                    <div class="cover-visuals-load">
+                                        <div class="loaded-image" id="kkk">
+                                            <img src="svg\load\default-image.png" alt="" id="blah" data-key="albumDisplayImage" class="loaded-image-img">
+                                        </div>
+                                        <div class="input__wrapper input__wrapper_margin">
+                                            <input name="Cover" type="file" value="" name="file" id="input__file"
+                                                accept=".jpg,.jpeg" data-key="Cover" onchange="validateImage()"
+                                                class="reset_class input input__file album_track_fields" >
+                                            <label for="input__file" class="input__file-button">
+                                                <span class="input__file-button-text">выбрать файл</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </div>
+    
+    
+                            <div class="standart-form need-form-heigh2">
+                                <div class="formname-req">
+                                    <h1 class="formname">Ссылка на обложку </h1>
+                                    <div class="popup" onclick="popupe()" id="popup-div3"><img src="svg\tip.svg" alt=""
+                                            class="tip-sym-img">
+                                        <span class="popuptext" id="myPopupe">
+                                            При наличии можете
+                                            заполнить эту позицию
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="standart-input track-link">
+                                    <div class="text-area-size-juicy">
+                                        <textarea type="text" id="CoverLink" class="reset_class area-for-song-text-juicy" data-key="albumCoverLink" name="CoverLink"
+                                            placeholder="Ссылка на файлообменник для загрузки трека в формате .jpg 1440x"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="standart-form">
+                                <div class="formname-req">
+                                    <h1 class="formname">ссылка на instagram артиста</h1>
+                                    
+                                </div>
+                                <div data-val-required="" data-error="" class="standart-input">
+                                    <input id="InstagramLink" type="text" class="reset_class input-req input-req-big"
+                                        placeholder="">
+                                </div>
+                            </div>
+                            <div class="standart-form">
+                                <div class="formname-req">
+                                    <h1 class="formname" name="Swagga_veka">Cсылка на паблик VK артиста</h1>
+                                    
+                                </div>
+                                <div data-val-required="" data-error="" class="standart-input">
+                                    <input id="VkPublicLink" type="text" class="reset_class input-req input-req-big"
+                                        placeholder="">
+                                </div>
+                            </div>
+                            <div class="standart-form">
+                                <div class="formname-req">
+                                    <h1 class="formname">Ссылка на карточку музыканта на площадке Apple (Apple ID)</h1>
+                                    
+                                </div>
+                                <div data-val-required="" data-error="" class="standart-input">
+                                    <input id="AppleIdLink" type="text" class="reset_class input-req input-req-big"
+                                        placeholder="">
+                                </div>
+                            </div>
+                            <div class="standart-form">
+                                <div class="formname-req">
+                                    <h1 class="formname">Ссылка на сайт артиста</h1>
+                                    
+                                </div>
+                                <div data-val-required="" data-error="" class="standart-input">
+                                    <input id="SiteLink" type="text" class="reset_class input-req input-req-big"
+                                        placeholder="">
+                                </div>
+                            </div>
+                            <div class="standart-form">
+                                <div class="formname-req">
+                                    <h1 class="formname" name="pika-why-u-ban-me">Ссылка на карточку музыканта на площадке Spotify</h1>
+                                    
+                                </div>
+                                <div data-val-required="" data-error="" class="standart-input">
+                                    <input id="SpotifyLink" type="text" class="reset_class input-req input-req-big"
+                                        placeholder="">
+                                </div>
+                            </div>
+    
+    
+    
+    
+                        </div>
+    
+                        <div class="main-form2">
+    
+                            <div class="main-form2-block">
+    
+                                <div class="head-of-block">
+                                    <div class="head-of-block-inner">
+                                        <div class="heade-of-block-flex head-persons-author" id="persons-block">
+                                            <div class="head-of-block-text">
+                                                <h1 class="main-form2-block-header">
+                                                    автор слов
+                                                </h1>
+                                                <span onclick="PersonsNameAdder(this)" class="add-new-person txtaut" data-type="author" id="add-new-person-btn">
+                                                    <img src="svg\add-person.svg" class="add-new-person-img"></img>
+                                                </span>
+                                            </div>
+                                            
+    
+    
+    
+                                            
+                                            <!--
+                                                <div onclick="WhatWeWont(this)" class="" id="parent-block-for-delete" name="selectedPerson">
+                                                <h1 class="fname-person" id="person-change-fname-visual">Болконская</h1>
+                                                <span onclick="PersonsNameDelete(this)" class="del-person" id="delete-person-btn">
+                                                    <img src="svg\del-person.svg" alt="" class="del-person-img">
+                                                </span>
+                                            </div>
+                                            -->
+                                            
+    
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                
+                                <div class="standart-form">
+                                    <div class="formname-req">
+                                        <h1 class="formname">фамилия</h1>
+                                        <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                    </div>
+                                    <div data-val-required="" data-error="" class="standart-input">
+                                        <input name="lnameAut" type="text" class="input-req Aut-Values" data-type="author" data-key = "lname" id="lnameAut" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="standart-form">
+                                    <div class="formname-req">
+                                        <h1 class="formname">имя</h1>
+                                        <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                    </div>
+                                    <div data-val-required="" data-error="" class="standart-input">
+                                        <input name="fnameAut" type="text" class="input-req Aut-Values" data-type="author" data-key = "fname" id="fnameAut" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="standart-form">
+                                    <div class="formname-req">
+                                        <h1 class="formname">отчество</h1>
+                                    </div>
+                                    <div class="standart-input">
+                                        <input name="mnameAut" type="text" class="input-unreq Aut-Values" data-type="author" data-key = "mname" id="mnameAut" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="checkbox-inner">
+                                    <div class="input-checkbox">
+                                        <input type="checkbox" id="mnameAuthorCheck" data-key = "checkbox" data-type="author" name="ExplicitContent " data-val="true"
+                                            value="true"  class="custom-checkbox fatherBox" />
+                                        <label for="mnameAuthorCheck"  class="checkbox-label">Отчество отсутсвует</label>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+    
+    
+                            <div class="main-form2-block">
+    
+                                <div class="head-of-block">
+                                    <div class="head-of-block-inner">
+                                        <div class="heade-of-block-flex head-persons-aranj" id="persons-block">
+                                            <div class="head-of-block-text">
+                                                <h1 class="main-form2-block-header">
+                                                    аранжировщик
+                                                </h1>
+                                                <span onclick="PersonsNameAdder(this)" data-type="aranj" class="add-new-person arjadd" id="add-new-person-btn">
+                                                    <img src="svg\add-person.svg" class="add-new-person-img"></img>
+                                                </span>
+                                            </div>
+                                            
+    
+    
+    
+                                            
+                                            <!--
+                                                <div onclick="WhatWeWont(this)" class="fname-of-person-block" id="parent-block-for-delete" name="selectedPerson">
+                                                <h1 class="fname-person" id="person-change-fname-visual">Болконская</h1>
+                                                <span onclick="PersonsNameDelete(this)" class="del-person" id="delete-person-btn">
+                                                    <img src="svg\del-person.svg" alt="" class="del-person-img">
+                                                </span>
+                                            </div>
+                                            -->
+                                            
+    
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                
+                                <div class="standart-form">
+                                    <div class="formname-req">
+                                        <h1 class="formname">фамилия</h1>
+                                        <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                    </div>
+                                    <div data-val-required="" data-error="" class="standart-input">
+                                        <input name="lnameAut" type="text" class="input-req Aut-Values"data-type="aranj" data-key = "lname" id="lnameAranj" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="standart-form">
+                                    <div class="formname-req">
+                                        <h1 class="formname">имя</h1>
+                                        <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                    </div>
+                                    <div data-val-required="" data-error="" class="standart-input">
+                                        <input name="fnameAut" type="text" class="input-req Aut-Values"data-type="aranj" data-key = "fname" id="fnameAranj" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="standart-form">
+                                    <div class="formname-req">
+                                        <h1 class="formname">отчество</h1>
+                                    </div>
+                                    <div class="standart-input">
+                                        <input name="mnameAut" type="text" class="input-unreq Aut-Values"data-type="aranj" data-key = "mname" id="mnameAranj" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="checkbox-inner">
+                                    <div class="input-checkbox">
+                                        <input type="checkbox" id="mnameArjCheck" data-key = "checkbox" data-type="aranj" name="ExplicitContent " data-val="true"
+                                            value="true"  class="custom-checkbox fatherBox aranj" />
+                                        <label for="mnameArjCheck"  class="checkbox-label">Отчество отсутсвует</label>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                            <div class="main-form2-block">
+    
+                                <div class="head-of-block">
+                                    <div class="head-of-block-inner">
+                                        <div class="heade-of-block-flex head-persons-singer" id="persons-block">
+                                            <div class="head-of-block-text">
+                                                <h1 class="main-form2-block-header">
+                                                    исполнитель
+                                                </h1>
+                                                <span onclick="PersonsNameAdder(this)"data-type="singer" class="add-new-person sinus" id="add-new-person-btn">
+                                                    <img src="svg\add-person.svg" class="add-new-person-img"></img>
+                                                </span>
+                                            </div>
+                                            
+    
+    
+    
+                                            
+                                            <!--
+                                                <div onclick="WhatWeWont(this)" class="fname-of-person-block" id="parent-block-for-delete" name="selectedPerson">
+                                                <h1 class="fname-person" id="person-change-fname-visual">Болконская</h1>
+                                                <span onclick="PersonsNameDelete(this)" class="del-person" id="delete-person-btn">
+                                                    <img src="svg\del-person.svg" alt="" class="del-person-img">
+                                                </span>
+                                            </div>
+                                            -->
+                                            
+    
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                
+                                <div class="standart-form">
+                                    <div class="formname-req">
+                                        <h1 class="formname">фамилия</h1>
+                                        <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                    </div>
+                                    <div data-val-required="" data-error="" class="standart-input">
+                                        <input name="lnameAut" type="text" class="input-req Aut-Values"data-type="singer" data-key = "lname" id="lnameIspol" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="standart-form">
+                                    <div class="formname-req">
+                                        <h1 class="formname">имя</h1>
+                                        <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                    </div>
+                                    <div data-val-required="" data-error="" class="standart-input">
+                                        <input name="fnameAut" type="text" class="input-req Aut-Values"data-type="singer" data-key = "fname" id="fnameIspol" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="standart-form">
+                                    <div class="formname-req">
+                                        <h1 class="formname">отчество</h1>
+                                    </div>
+                                    <div class="standart-input">
+                                        <input name="mnameAut" type="text" class="input-unreq Aut-Values" data-type="singer" data-key = "mname" id="mnameIspol" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="checkbox-inner">
+                                    <div class="input-checkbox">
+                                        <input type="checkbox" id="mnameIspolCheck" data-key = "checkbox" data-type="singer" name="ExplicitContent " data-val="true"
+                                            value="true"  class="custom-checkbox fatherBox singer" />
+                                        <label for="mnameIspolCheck"  class="checkbox-label">Отчество отсутсвует</label>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+    
+    
+                            
+                            <div class="main-form2-block">
+    
+                                <div class="head-of-block">
+                                    <div class="head-of-block-inner">
+                                        <div class="heade-of-block-flex head-persons-compozitor" id="persons-block">
+                                            <div class="head-of-block-text">
+                                                <h1 class="main-form2-block-header">
+                                                    композитор
+                                                </h1>
+                                                <span onclick="PersonsNameAdder(this)" data-type="compozitor" class="add-new-person composi" id="add-new-person-btn">
+                                                    <img src="svg\add-person.svg" class="add-new-person-img"></img>
+                                                </span>
+                                            </div>
+                                            
+    
+    
+    
+                                            
+                                            <!--
+                                                <div onclick="WhatWeWont(this)" class="fname-of-person-block" id="parent-block-for-delete" name="selectedPerson">
+                                                <h1 class="fname-person" id="person-change-fname-visual">Болконская</h1>
+                                                <span onclick="PersonsNameDelete(this)" class="del-person" id="delete-person-btn">
+                                                    <img src="svg\del-person.svg" alt="" class="del-person-img">
+                                                </span>
+                                            </div>
+                                            -->
+                                            
+    
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                
+                                <div class="standart-form">
+                                    <div class="formname-req">
+                                        <h1 class="formname">фамилия</h1>
+                                        <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                    </div>
+                                    <div data-val-required="" data-error="" class="standart-input">
+                                        <input name="lnameAut" type="text" class="input-req Aut-Values" data-type="compozitor" data-key = "lname" id="lnameKomp" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="standart-form">
+                                    <div class="formname-req">
+                                        <h1 class="formname">имя</h1>
+                                        <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                    </div>
+                                    <div data-val-required="" data-error="" class="standart-input">
+                                        <input name="fnameAut" type="text" class="input-req Aut-Values" data-type="compozitor" data-key = "fname" id="fnameKomp" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="standart-form">
+                                    <div class="formname-req">
+                                        <h1 class="formname">отчество</h1>
+                                    </div>
+                                    <div class="standart-input">
+                                        <input name="mnameAut" type="text" class="input-unreq Aut-Values" data-type="compozitor" data-key = "mname" id="mnameKomp" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="checkbox-inner">
+                                    <div class="input-checkbox">
+                                        <input type="checkbox" id="mnameKompCheck" data-key = "checkbox" data-type="compozitor" name="ExplicitContent " data-val="true"
+                                            value="true"  class="custom-checkbox fatherBox compozitor" />
+                                        <label for="mnameKompCheck"  class="checkbox-label">Отчество отсутсвует</label>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+    
+                            <div class="seconds-artist-tips">
+                                <div class="standart-form need-form-heigh">
+                                    <div class="formname-req">
+                                        <h1 class="formname">Cсылка на Instagram второго исполнителя </h1>
+                                        <div class="popup" onclick="popup()" id="popup-div2"><img src="svg\tip.svg" alt=""
+                                                class="tip-sym-img">
+                                            <span class="popuptext" id="myPopupq">
+                                                При наличии можете
+                                                заполнить эту позицию
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="standart-input">
+                                        <input id="Instagram2Link" type="text" class="reset_class input-req" value=""
+                                            placeholder="">
+                                    </div>
+                                </div>
+                                <div class="calendar-block">
+                                    <div class="input-calendar-kek">
+                                        <h1 class="input-date-header-text">Дата релиза</h1>
+                                        <div class="input-date">
+                                            <div class="input-date-block">
+                                                <input id="date-picker-string" type="date" value="" dateformat="yyyy-MM-dd" data-val="true"
+                                                    value="" name="ReleaseDate" class="reset_class date-picker-string _req album_track_fields" data-key="Date">
+                                                <label for="date-picker-string" class="date-picker-lable "></label>
+                                                <span class="date-picker-image">
+    
+                                                    <span id="date-picker-img">
+                                                        <img src="svg\calendar-img-date.svg" alt="" class="number-control">
+                                                    </span>
+    
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+    
+                                    <div class="calendar">
+                                        <div class="calendar-header">
+                                            <div class="month-picker1">
+                                                <span class="month-change" id="prev-month">
+                                                    <pre><</pre>
+                                                </span>
+                                                <span class="month-picker" id="month-picker">Январь</span>
+                                                <span class="month-change" id="next-month">
+                                                    <pre>></pre>
+                                                </span>
+                                            </div>
+    
+                                            <div class="year-picker">
+                                                <span class="year-change" id="prev-year">
+                                                    <pre><</pre>
+                                                </span>
+                                                <span id="year">2021</span>
+                                                <span class="year-change" id="next-year">
+                                                    <pre>></pre>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="calendar-body">
+                                            <div class="calendar-week-day">
+                                                <div>Пн</div>
+                                                <div>Вт</div>
+                                                <div>Ср</div>
+                                                <div>Чт</div>
+                                                <div>Пт</div>
+                                                <div>Сб</div>
+                                                <div>Вс</div>
+                                            </div>
+                                            <div class="calendar-days"></div>
+                                        </div>
+    
+                                        <div class="month-list"></div>
+                                    </div>
+    
+    
+    
+    
+    
+    
+                                </div>
+    
+    
+                                <div  class="select-janr" id="janr-body2">
+                                    <div class="select-header-text-janr">
+                                        <span class="select-what">Жанр</span>
+                                        <img src="svg\red-dot.svg" alt="*" class="req-icon">
+                                    </div>
+                                    <div class="select _req album_track_fields genre-picker" data-key="Genre" name="Genre" id="Genre-Type" data-value="">
+                                        <div onClick="ArrowSwap1()" class="select-header janr-color" id="display-genre-error">
+                                            <span class="select-current" id="selected-janr">Выбрать жанр</span>
+                                            <img src="svg\input-contorls\Prev.svg" alt="" class="select-arrow" id="arrow-swap-id1">
+                                        </div>
+                                        <div class="select-body" id="select-body-2">
+                                            <div class="select-item janr" id="select-item-id" data-value="African">African</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Alternative">Alternative</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Arabic">Arabic</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Asian">Asian</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Blues">Blues</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Brazilian">Brazilian</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Children Music">Children Music</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Christian & Gospel">Christian & Gospel</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Classical">Classical</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Country">Country</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Dance">Dance</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Easy Listening">Easy Listening</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Electronic">Electronic</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Folk">Folk</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Hip Hop/Rap">Hip Hop/Rap</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Indian">Indian</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Jazz">Jazz</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Latin">Latin</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Metal">Metal</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Pop">Pop</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="R&B/Soul">R&B/Soul</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Reggae">Reggae</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Relaxation">Relaxation</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Rock">Rock</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="Various">Various</div>
+                                            <div class="select-item janr" id="select-item-id" data-value="World Music / Regional Folklore">World Music / Regional Folklore</div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                
+    
+                            </div>
+    
+                            
+    
+                        </div>
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+                <div class="song-words">
+                    <div class="words-header-text flexim-jestro-rolf">
+                        <h1 class="formname-text margin-from-names">текст песни</h1>
+                        <div class="checkbox-inner1">
+                            <div class="input-checkbox">
+                                <input type="checkbox" id="TrackTextCheck" name="ExplicitContent" data-val="true"
+                                    value="true" class="custom-checkbox" onclick="InputBlock5(this)" />
+                                <label for="TrackTextCheck" class="checkbox-label">Текст песни отсутсвует</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-area-size " id="track-text-display-error">
+                        <textarea class="area-for-song-text _req album_track_fields reset_class" data-key="albumTrackText" id="TrackText" 
+                            type="text"
+                            placeholder="Введите текст вашей песни"></textarea>
+                    </div>
+                    
+                </div>
+                
+                <div class="bottom-disclaimer">
+                    <div class="words-header-text">
+                        <h1 class="formname-text">
+                            Мы запрашиваем у площадок промо-поддержку Вашего релиза. 
+                            Просим внести развернутую
+                        </h1>
+                        <h1 class="formname-text xyz">
+                            информацию о Вашем треке и о 
+                            Вас как об артисте, о ваших успехах и
+                            достижениях
+                        </h1>
+                    </div>
+                    <div class="text-area-size">
+                        <textarea class="area-for-song-text reset_class" id="Promo" type="text"
+                            placeholder="Введите информацию о себе"></textarea>
+                    </div>
+                </div>
+
+            
+
+            </div>
+        </div>
+
+
+        </form>
+
+        <div class="container">
+            <div class="submit-button-block">
+                <div class="submit-btn">
+                    <button onclick="FullValidateValues();" class="text-field__btn" type="button">
+                        <img src="svg\btn\file.svg" alt="" class="btn-form">
+                        <h1 class="btn-text">Отправить</h1> 
+                    </button>
+                </div>
+            </div> 
+        </div> 
+        </div>
+        <footer class="footer">
+            <div class="container">
+
+                <div class="footer-content">
+                    <div class="footer-info">
+                        <div class="info">
+                            <h1 class="footer-h1">© 2022 название </h1>
+                        </div>
+                        <div class="info">
+                            <h1 class="footer-h1">КОНТАКТЫ</h1>
+                            <h1 class="footer-h1"></h1>
+                        </div>
+                        <div class="info">
+                            <h1 class="footer-h1">+НОМЕР-НОМЕР</h1>
+                        </div>
+                        <div class="info">
+                            <h1 class="footer-h1">АДРЕС</h1>
+                            <h1 class="footer-h1">ПРОСПЕКТ НАЗВАНИЕ</h1>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-nav-help">
+                            <nav class="footer-nav">
+                                <a href="" target="_blank" class="footer-link-a">
+                                    <img src="svg\footer\youtube.svg" alt="" class="footer-nav-img">
+                                </a>
+                                <a href="" class="footer-link-a" target="_blank">
+                                    <img src="svg\footer\tiktok.svg" alt="" class="footer-nav-img">
+                                </a>
+                                <a href="" target="_blank" class="footer-link-a">
+                                    <img src="svg\footer\vk.svg" alt="" class="footer-nav-img">
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </footer>
+    </main>
+    <div class="modal-black">
+        <div class="audio-wave-loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    
+    <script  src="script.js?11" type="text/javascript"></script>
+    <script  src="OtherMembers.js?10" type="text/javascript"></script>
+    <script  src="calendar\app.js?10" type="text/javascript"></script>
+    <script  src="album.js?10" type="text/javascript"></script>
+    <!--текст-->
+</body>
+
+</html>
